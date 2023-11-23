@@ -1,19 +1,13 @@
+
 import os
 import websocket
-from dotenv import load_dotenv
 import json
 import pandas as pd
 from datetime import datetime
 from statistics import mean
-load_dotenv()
-WEBSOCKET_URL = os.getenv("WEBSOCKET_URL")
 
-# Check if WEBSOCKET_URL is None (i.e., not found in environment variables)
-if WEBSOCKET_URL is None:
-    print("Error: WebSocket URL not found in environment variables.")
-    # You can raise an exception or return a default value/error message based on your requirements
-    # For example, raising an exception:
-    raise ValueError("WebSocket URL not found.")
+WEBSOCKET_URL = "wss://functionup.fintarget.in/ws?id=fintarget-functionup"
+
 
 CSV_FILENAME = "olhc_data.csv"
 WINDOW_SIZE = 3
